@@ -47,7 +47,7 @@ Client                     Serveur
   |     Sécurisée (AES)       |
 ```
 
-## 📁 Structure du Projet
+## Structure du Projet
 
 ```
 SecureChat/
@@ -67,14 +67,13 @@ SecureChat/
         └── RateLimiter.java
 ```
 
-## 🔍 Analyse Wireshark
-
+## Analyse Wireshark
 Nous avons analysé le trafic réseau avec Wireshark pour vérifier la sécurité de notre implémentation:
---------
+
 ### Captures d'écran
 
 **Vue d’ensemble des paquets entrants pendant une session chat**
-![Packet TCP Port 8888](images/server wireshark.png)
+![Packet TCP Port 8888](images/serverwireshark.png)
 *Analyse du trafic réseau avec Wireshark : capture et détails d’un paquet TCP.*
 
 **Échange de clés RSA:**
@@ -82,11 +81,11 @@ Nous avons analysé le trafic réseau avec Wireshark pour vérifier la sécurit�
 *La clé publique RSA est transmise à chaque nouveau client connecté. Cette clé est visible dans Wireshark (ce qui est normal, car elle est publique). La même clé publique est envoyée à tous les clients, comme requis pour le chiffrement RSA.*
 
 **Messages chiffrés:**
-![Encrypted Messages](images/messages crypte.jpg)
+![Encrypted Messages](images/messagescrypte.jpg)
 *Les messages sont chiffrés en AES, tandis que certaines informations de session non sensibles restent en clair. Tous les messages sont correctement protégés par AES.*
 
 **Déploiement AWS EC2**
-![Functioning Server](images/server aws.png)
+![Functioning Server](images/serveraws.png)
 *Le serveur est configuré comme service pour un fonctionnement continu et stable.*
 
 ##  Points de Sécurité Importants
