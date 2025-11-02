@@ -64,6 +64,7 @@ public class SecureChatClient {
                     encryptedSessionKey, clientKeyPair.getPrivate());
             sessionKey = new SecretKeySpec(sessionKeyBytes, "AES");
 
+
             System.out.println("[CLIENT] Session key received and decrypted");
             System.out.println("[CLIENT] Secure channel established!");
         }
